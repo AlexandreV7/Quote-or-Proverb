@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header><span id="quoteFont">Quote</span> or <span id="proverbFont">Proverb</span> ?</header>
+    <p>Would you like to see a quote or a proverb ?</p>
+    <p class="error"></p>
+    <div class="noColumn">
+    <label class="quoteLabel">
+      <input class="checkQ" type="radio" name="check" > A quote
+    </label>
+    <label class="proverbLabel">
+      <input class="checkP" type="radio" name="check" > A proverb
+    </label >
+    </div>
+
+    <button class="btn" onclick="send()">See my message</button>
+    
+    <textarea class="message" type="comment" placeholder="?"></textarea>
+        
+    <button class="btnRst" onclick="reset()">Reinitialiser</button>
+    <button class="addMessage" onclick="createMessage()">Add message</button>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

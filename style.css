@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Oswald:wght@600&display=swap');
+
+*{
+    font-size: x-large;
+    color:rgb(227, 206, 144)
+}
+header{
+    font-size: xx-large;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(56, 49, 41);
+}
+
+.noColumn{
+    align-self: auto;
+}
+
+#quoteFont{
+    font-weight: 600;
+    font-size: x-large;
+    font-family: "Oswald";
+    color: gold;
+}
+#proverbFont{
+    font-weight: 600;
+    font-size: x-large;
+    font-family: "Lobster Two";
+    color: gold;
+}
+
+.error {
+    margin: 0px;
+    font-size: small;
+}
+.quoteLabel {
+    font-family: "Oswald";
+    margin-right : 30px;
+}
+.proverbLabel{
+    font-family: "Lobster Two";
+    margin-left: 30px;
+}
+.addMessage{
+    margin-top: 15px;
+}
+
+.message{
+    margin: 20px 0;
+    width: 45%;
+    height: 35%;
+    border: 5px solid;
+    border-color: silver;
+    text-align: center;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+::-webkit-input-placeholder {
+    width: 100%;
+    margin-top: 100px;
+    font-size: 100px;
+    text-align: center;
+
+}
+.createMessageForm{
+    width: 500px;
+    height: 400px;
+    margin: 20px;
+    background: #1a19197b;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:10px;
+    border: 1px solid;
+}
+.createMassageArea{
+    height: 80%;
+    width: 100%;
+    align-self: flex-start;
+    color: black;
+}
+.createMessageSelect{
+    background: rgba(0, 0, 0, 0.657);
+    color: goldenrod;
+    margin-bottom: 10px;
+    font-size: large;
+}
+.submit {
+    width: 50%;
+}
+
+
+
+.btn {
+    margin-top: 10px;
+}
+
+.btn, .btnRst, .addMessage{
+    font-size: large;
+    padding: 4px 10px;
+    background: rgba(0, 0, 0, 0.453);
+    color: goldenrod;
+    border: 1px solid;
+    border-radius: 1px;
+    cursor: pointer;
+}
+.btnRst:disabled, .addMessage:disabled, .btn:disabled, .btnRst:disabled{
+    background: rgba(207, 204, 204, 0.453);
+    color: rgb(127, 138, 173);
+    cursor: default;
+}
+
