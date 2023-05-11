@@ -43,9 +43,13 @@ const data = [
 ];
 
 const msg = document.querySelector(".message");
+// What btn ? Naming is important
 const btn = document.querySelector(".btn");
+// quoteRadio would be a better name, holding technical info and what it is 
+// in the context of your app
 const quote = document.querySelector(".checkQ");
 const proverbe = document.querySelector(".checkP");
+// document.body is available by default, no need to reserve space in the memory for this
 const body = document.querySelector("body");
 const resetBtn = document.querySelector(".btnRst");
 
@@ -55,6 +59,8 @@ if (msg.value == "") resetBtn.disabled = true;
 if (quote.checked == false && proverbe.checked == false) btn.disabled = true;
 quote.addEventListener("click", function () {
   if (quote.checked) btn.disabled = false;
+  // Why having a conditional structure here ? 
+  // As soon as a radio is checked you can enabled the btn I think
   else btn.disabled = true;
 });
 proverbe.addEventListener("click", function () {
@@ -66,6 +72,8 @@ proverbe.addEventListener("click", function () {
 
 
 //Display the quote or proverb based on the checked box
+// ES6 please const send = () => {}; 
+// Better to get used to it as soon as possible
 function send() {
   if(quote.checked){
     const quoteTab = data.filter((element) => element.type == "quote");
@@ -91,12 +99,13 @@ function send() {
 
 
 //Declaration of a counter to display a buttonAddFavorite only once
+// Or you could have created the button directly in the function ?
 let count = 0;
 
 
 const buttonAddFavorite = document.createElement("button");
 
-
+// I think you could have named it "displayAddToFavoriteBtn" for more clarity
 function addToFavorite(elementRandom) {
   
   buttonAddFavorite.textContent = "Add to favorite";
@@ -115,6 +124,7 @@ function addToFavorite(elementRandom) {
       message: elementRandom.message,
     };
     
+    // if (compare(newFavorite, dataLocalStorage)) is actually enough as it returns a boolean
     if (compare(newFavorite, dataLocalStorage) == false) {
       dataLocalStorage.push(newFavorite);
       localStorage.setItem("favorites", JSON.stringify(dataLocalStorage));
@@ -126,6 +136,7 @@ function addToFavorite(elementRandom) {
 }
 
 //Check if a favorite already exists in the local storage.
+// Good idea to have a proper function for this
 function compare(newFavorite, tabFavorites){
   for(let i = 0; i<tabFavorites.length; i++)
   { 
@@ -135,6 +146,7 @@ function compare(newFavorite, tabFavorites){
 }
 
 //Declaration of a counter to display a buttonDisplayFavorites only once
+// Why ? You should be able to go to your favorites page anytime
 let counter = 0;
 
 
@@ -201,6 +213,35 @@ function createMessage() {
   proverbe.disabled = true;
 
   //This function creates a new object and adds it to the data array
+  /*
+  You can refactor your function and use less memory
+  And what is form.replaceWith(msg); doing ?
+  const addNewMsg = (event) => {
+    event.preventDefault();
+
+    data.push({
+      id: data.length,
+      type: select.value,
+      message: textarea.value,
+    });
+    
+    quote.disabled = false;
+    proverbe.disabled = false;
+      
+    if(newData.type == "quote"){
+      quote.checked = true;
+    }
+    if (newData.type == "proverb") {
+      proverbe.checked = true;
+    }
+
+    addToFavorite(newData);
+   
+    form.replaceWith(msg);
+    msg.value = textarea.value;
+    resetBtn.disabled = false;
+  }
+  */
   function addData(event) {
     event.preventDefault();
     let type = select.value;
