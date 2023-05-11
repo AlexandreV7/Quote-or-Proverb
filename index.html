@@ -14,6 +14,13 @@
     <p>Would you like to see a quote or a proverb ?</p>
     <p class="error"></p>
     <div class="noColumn">
+      
+    <!-- Labels must be attached to input, select, textarea etc. 
+      To do so, you need to ass a "for" attribute to the label with the value of the input id.
+      <label class="quoteLabel" for="quote">
+      <input class="checkQ" type="radio" name="check" id="quote" > A quote
+    </label>
+    -->
     <label class="quoteLabel">
       <input class="checkQ" type="radio" name="check" > A quote
     </label>
@@ -21,7 +28,10 @@
       <input class="checkP" type="radio" name="check" > A proverb
     </label >
     </div>
-
+    
+    <!-- Ok but it is a better practice to add event listener in the js file.
+         You can handle more cases
+    -->
     <button class="btn" onclick="send()">See my message</button>
     
     <textarea class="message" type="comment" placeholder="?"></textarea>
